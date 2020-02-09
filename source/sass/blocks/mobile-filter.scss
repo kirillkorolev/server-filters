@@ -1,0 +1,173 @@
+.mobile-filter {
+  display: none;
+}
+
+@media (max-width: $mobile-width) {
+  .mobile-filter {
+    display: block;
+    order: -1;
+  }
+
+  .mobile-filter__list {
+    @include reset-list;
+  }
+
+  .mobile-filter__filtering {
+    margin-bottom: 12px;
+
+    &--processor {
+      .mobile-filter__checkbox-list {
+        flex-direction: column;
+      }
+
+      .mobile-filter__item:not(:last-child) {
+        margin: 0 0 33px;
+      }
+    }
+  }
+
+  .mobile-filter__button {
+    padding: 14px;
+    margin-right: 5px;
+    background-color: $button-grey;
+    border: 1px solid $border-grey;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--checked {
+      .mobile-filter__selected-mark {
+        display: block;
+      }
+    }
+
+    &--active {
+      background-color: $white;
+      border-bottom: none;
+
+      .mobile-filter__button-icon::before {
+        background-color: $orange;
+        transform: rotate(135deg);
+      }
+
+      .mobile-filter__button-icon::after {
+        background-color: $orange;
+        transform: rotate(-135deg);
+      }
+
+      .mobile-filter__selected-mark {
+        display: none;
+      }
+    }
+  }
+
+  .mobile-filter__button:hover .mobile-filter__button-title {
+    color: $real-black;
+  }
+
+  .mobile-filter__button--active + .mobile-filter__wrap {
+    border-bottom: 1px solid $border-grey;
+  }
+
+  .mobile-filter__button-icon {
+    display: block;
+    position: relative;
+    width: 18px;
+    height: 18px;
+  }
+
+  .mobile-filter__button-icon::before,
+  .mobile-filter__button-icon::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 1px;
+    background-color: $real-black;
+    top: 5px;
+  }
+
+  .mobile-filter__button-icon::before {
+    left: 0;
+    transform: rotate(45deg);
+  }
+
+  .mobile-filter__button-icon::after {
+    right: 0;
+    transform: rotate(-45deg);
+  }
+
+  .mobile-filter__checkbox-list {
+    @include reset-list;
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: 27px 25px 20px;
+    background-color: $white;
+  }
+
+  .mobile-filter__item {
+    margin-right: 30px;
+    margin-bottom: 10px;
+    padding-left: 33px;
+  }
+
+  .mobile-filter__label {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: $real-black;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .mobile-filter__label::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 1px solid $border-checkbox;
+    top: -3px;
+    left: -33px;
+  }
+
+  .mobile-filter__item:hover .mobile-filter__label::before {
+    border-color: $real-black;
+  }
+
+  .mobile-filter__input:checked + .mobile-filter__label::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -29px;
+    width: 16px;
+    height: 12px;
+    background-repeat: no-repeat;
+    background-image: url("../img/icons/icon-check.svg");
+  }
+
+  .mobile-filter__wrap {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border: 1px solid $border-grey;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .mobile-filter__button-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-filter__selected-mark {
+    display: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $orange;
+    margin-right: 9px;
+  }
+}

@@ -1,0 +1,79 @@
+.condition__slogan {
+  font-weight: 700;
+
+  &--active {
+    color: $orange;
+  }
+}
+
+.condition__label {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+  color: $real-black;
+}
+
+.condition__label::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 1px solid $border-checkbox;
+  background-color: transparent;
+  left: -35px;
+  top: -3px;
+}
+
+.condition__input:checked + .condition__label::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-image: url("../img/icons/icon-check.svg");
+  top: 2px;
+  left: -31px;
+}
+
+.condition__input:checked + .condition__label::before {
+  border-color: $orange;
+}
+
+.condition__item:hover .condition__label::before {
+  border-color: $real-black;
+}
+
+.condition__filters-list {
+  @include reset-list;
+  display: flex;
+  max-width: 221px;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.condition {
+  display: flex;
+  width: 27%;
+  max-width: 335px;
+  min-width: 155px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.condition__item {
+  padding-left: 33px;
+}
+
+@media (max-width: $mobile-width) {
+  .condition {
+    width: 100%;
+    max-width: 225px;
+  }
+
+  .condition__slogan {
+    margin-bottom: 7px;
+  }
+}

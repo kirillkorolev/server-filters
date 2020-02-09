@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preload" href="css/style.min.css" as="style">
+  <link rel="preload" href="fonts/open-sans-semibold.woff2" as="font">
+  <link rel="preload" href="fonts/open-sans-semibold.woff" as="font">
+  <link rel="preload" href="fonts/open-sans-bold.woff2" as="font">
+  <link rel="preload" href="fonts/open-sans-bold.woff" as="font">
+  <link rel="preload" href="fonts/roboto-regular.woff2" as="font">
+  <link rel="preload" href="fonts/roboto-regular.woff" as="font">
+  <link rel="shortcut icon" type="image/ico" sizes="16x16" href="favicon.ico">
+  <title>Конфигруация сервера</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <script src="./js/plugins/picturefill.min.js" async></script>
+</head>
+<body>
+  <header class="page-header"></header>
+  <main>
+    <h1 class="visually-hidden">Конфигруация сервера</h1>
+    <section class="filter">
+      <h2 class="filter__title">Подобрать конфигурацию сервера</h2>
+      <form class="filter__form" action="https://servers.ru" method="post">
+        <div class="filter__desktop-wrap">
+          <div class="filter__desktop-top-wrap">
+            <ul class="filter__buttons-list">
+              <li class="filter__item">
+                <button class="filter__button filter__button--factor" id="desktop-button-factor" type="button">
+                  <span class="filter__selected-mark"></span><span>Форм-Фактор</span>
+                </button>
+              </li>
+              <li class="filter__item">
+                <button class="filter__button filter__button--producer" id="desktop-button-producer" type="button">
+                  <span class="filter__selected-mark"></span><span>Производитель</span>
+                </button>
+              </li>
+              <li class="filter__item">
+                <button class="filter__button filter__button--processor" id="desktop-button-processor" type="button">
+                  <span class="filter__selected-mark"></span><span>Процессор</span>
+                </button>
+              </li>
+              <li class="filter__item">
+                <button class="filter__button filter__button--memory" id="desktop-button-memory" type="button">
+                  <span class="filter__selected-mark"></span><span>Тип памяти</span>
+                </button>
+              </li>
+              <li class="filter__item">
+                <button class="filter__button filter__button--hard-drive" id="desktop-button-hard-drive" type="button">
+                  <span class="filter__selected-mark"></span><span>Жесткие диски</span>
+                </button>
+              </li>
+            </ul>
+            <div class="filter__condition condition">
+              <div class="condition__slogan">Состояние:</div>
+              <ul class="condition__filters-list">
+                <li class="condition__item">
+                  <input class="visually-hidden condition__input" type="checkbox" name="condition-new" id="filter-new" value="Новый">
+                  <label class="condition__label" for="filter-new">новые</label>
+                </li>
+                <li class="condition__item">
+                  <input class="visually-hidden condition__input" type="checkbox" name="condition-refurbisheds" id="filter-refurbished" value="refurbished">
+                  <label class="condition__label" for="filter-refurbished">refurbished</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <ul class="filter__checkboxes-container">
+            <li class="filter__checkboxes-item filter__checkboxes-item--factor" id="factor-wrap">
+              <ul class="filter__checkbox-list">
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="1u" id="desktop-filter-1u" value="1U">
+                  <label class="filter__label" for="desktop-filter-1u">1U (25)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="2u" id="desktop-filter-2u" value="2U">
+                  <label class="filter__label" for="desktop-filter-2u">2U (10)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="3u" id="desktop-filter-3u" value="3U">
+                  <label class="filter__label" for="desktop-filter-3u">3U (1)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="4u" id="desktop-filter-4u" value="4U">
+                  <label class="filter__label" for="desktop-filter-4u">4U (3)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="tower" id="desktop-filter-tower" value="Tower">
+                  <label class="filter__label" for="desktop-filter-tower">Tower (3)</label>
+                </li>
+              </ul>
+            </li>
+            <li class="filter__checkboxes-item filter__checkboxes-item--producer" id="producer-wrap">
+              <ul class="filter__checkbox-list">
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="asus" id="desktop-filter-asus" value="Asus">
+                  <label class="filter__label" for="desktop-filter-asus">Asus (1)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="dell" id="desktop-filter-dell" value="Dell">
+                  <label class="filter__label" for="desktop-filter-dell">Dell (4)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="hewlett-packard" id="desktop-filter-hewlett-packard" value="Hewlett Packard">
+                  <label class="filter__label" for="desktop-filter-hewlett-packard">Hewlett Packard (6)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="ibm" id="desktop-filter-ibm" value="IBM">
+                  <label class="filter__label" for="desktop-filter-ibm">IBM (1)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="supermicro" id="desktop-filter-supermicro" value="Supermicro">
+                  <label class="filter__label" for="desktop-filter-supermicro">Supermicro (13)</label>
+                </li>
+              </ul>
+            </li>
+            <li class="filter__checkboxes-item filter__checkboxes-item--processor" id="processor-wrap">
+              <ul class="filter__checkbox-list">
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="amd-opteron" id="desktop-filter-amd-opteron" value="AMD Opteron 61XX">
+                  <label class="filter__label" for="desktop-filter-amd-opteron">AMD Opteron 61XX (1)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="intel-xeon-53" id="desktop-filter-intel-xeon-53" value="Intel Xeon 53XX/54XX">
+                  <label class="filter__label" for="desktop-filter-intel-xeon-53">Intel Xeon 53XX/54XX (3)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="intel-xeon-55" id="desktop-filter-intel-xeon-55" value="Intel Xeon 55XX/56XX">
+                  <label class="filter__label" for="desktop-filter-intel-xeon-55">Intel Xeon 55XX/56XX (11)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="intel-xeon-e3" id="desktop-filter-intel-xeon-e3" value="Intel Xeon E3-12XX">
+                  <label class="filter__label" for="desktop-filter-intel-xeon-e3">Intel Xeon E3-12XX (2)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="intel-xeon-e5-v3" id="desktop-filter-intel-xeon-e5-v3" value="Intel Xeon E5-26XXV3/V4">
+                  <label class="filter__label" for="desktop-filter-intel-xeon-e5-v3">Intel Xeon E5-26XXV3/V4 (4)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="intel-xeon-e5-26" id="desktop-filter-intel-xeon-e5-26" value="Intel Xeon E5-26XX/E5-26XXV2">
+                  <label class="filter__label" for="desktop-filter-intel-xeon-e5-26">Intel Xeon E5-26XX/E5-26XXV2 (4)</label>
+                </li>
+              </ul>
+            </li>
+            <li class="filter__checkboxes-item filter__checkboxes-item--memory" id="memory-wrap">
+              <ul class="filter__checkbox-list">
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="ddr2" id="desktop-filter-ddr2" value="DDR2">
+                  <label class="filter__label" for="desktop-filter-ddr2">DDR2 (3)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="ddr3" id="desktop-filter-ddr3" value="DDR3">
+                  <label class="filter__label" for="desktop-filter-ddr3">DDR3 (18)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="ddr4" id="desktop-filter-ddr4" value="DDR4">
+                  <label class="filter__label" for="desktop-filter-ddr4">DDR4 (4)</label>
+                </li>
+              </ul>
+            </li>
+            <li class="filter__checkboxes-item filter__checkboxes-item--hard-drive" id="hard-drive-wrap">
+              <ul class="filter__checkbox-list">
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="hard-drive-2.5" id="desktop-filter-hard-drive-2.5" value="2.5”">
+                  <label class="filter__label" for="desktop-filter-hard-drive-2.5">2.5” (12)</label>
+                </li>
+                <li class="filter__checkbox-item">
+                  <input class="visually-hidden filter__input" type="checkbox" name="hard-drive-3.5" id="desktop-filter-hard-drive-3.5" value="3.5”">
+                  <label class="filter__label" for="desktop-filter-hard-drive-3.5">3.5” (13)</label>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="selected">
+            <h3 class="selected__title">Выбрано</h3>
+            <div class="selected__wrap">
+              <ul class="selected__filters">
+                <li class="selected__item selected__item--factor">
+                  <span class="selected__theme">Форм-фактор:</span>
+                </li>
+                <li class="selected__item selected__item--producer">
+                  <span class="selected__theme">Производитель:</span>
+                </li>
+                <li class="selected__item selected__item--processor">
+                  <span class="selected__theme">Процессор:</span>
+                </li>
+                <li class="selected__item selected__item--memory">
+                  <span class="selected__theme">Тип памяти:</span>
+                </li>
+                <li class="selected__item selected__item--hard-drive">
+                  <span class="selected__theme">Жесткие диски:</span>
+                </li>
+                <li class="selected__item selected__item--condition">
+                  <span class="selected__theme">Вид сервера:</span>
+                </li>
+              </ul>
+              <button class="selected__reset-button js-desktop-reset-button" type="reset">Сбросить все фильтры</button>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-filter">
+          <ul class="mobile-filter__list">
+            <li class="mobile-filter__filtering mobile-filter__filtering--factor">
+              <button class="mobile-filter__button js-filter-accordion-toggle" type="button">
+                <span class="mobile-filter__button-wrap">
+                  <span class="mobile-filter__selected-mark"></span>
+                  <span class="mobile-filter__button-title">Форм-Фактор</span>
+                </span>
+                <span class="mobile-filter__button-icon"></span>
+              </button>
+              <div class="mobile-filter__wrap">
+                <ul class="mobile-filter__checkbox-list">
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="1u" id="filter-1u">
+                    <label class="mobile-filter__label" for="filter-1u">1U (25)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="2u" id="filter-2u">
+                    <label class="mobile-filter__label" for="filter-2u">2U (10)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="3u" id="filter-3u">
+                    <label class="mobile-filter__label" for="filter-3u">3U (1)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="4u" id="filter-4u">
+                    <label class="mobile-filter__label" for="filter-4u">4U (3)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="tower" id="filter-tower">
+                    <label class="mobile-filter__label" for="filter-tower">Tower (3)</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="mobile-filter__filtering mobile-filter__filtering--producer">
+              <button class="mobile-filter__button js-filter-accordion-toggle" type="button">
+                <span class="mobile-filter__button-wrap">
+                  <span class="mobile-filter__selected-mark"></span>
+                  <span class="mobile-filter__button-title">Производитель</span>
+                </span>
+                <span class="mobile-filter__button-icon"></span>
+              </button>
+              <div class="mobile-filter__wrap">
+                <ul class="mobile-filter__checkbox-list">
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="asus" id="filter-asus">
+                    <label class="mobile-filter__label" for="filter-asus">Asus (1)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="dell" id="filter-dell">
+                    <label class="mobile-filter__label" for="filter-dell">Dell (4)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="hewlett-packard" id="filter-hewlett-packard">
+                    <label class="mobile-filter__label" for="filter-hewlett-packard">Hewlett Packard (6)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="ibm" id="filter-ibm">
+                    <label class="mobile-filter__label" for="filter-ibm">IBM (1)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="supermicro" id="filter-supermicro">
+                    <label class="mobile-filter__label" for="filter-supermicro">Supermicro (13)</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="mobile-filter__filtering mobile-filter__filtering--processor">
+              <button class="mobile-filter__button js-filter-accordion-toggle" type="button">
+                <span class="mobile-filter__button-wrap">
+                  <span class="mobile-filter__selected-mark"></span>
+                  <span class="mobile-filter__button-title">Процессор</span>
+                </span>
+                <span class="mobile-filter__button-icon"></span>
+              </button>
+              <div class="mobile-filter__wrap">
+                <ul class="mobile-filter__checkbox-list">
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="amd-opteron" id="filter-amd-opteron">
+                    <label class="mobile-filter__label" for="filter-amd-opteron">AMD Opteron 61XX (1)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="intel-xeon-53" id="filter-intel-xeon-53">
+                    <label class="mobile-filter__label" for="filter-intel-xeon-53">Intel Xeon 53XX/54XX (3)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="intel-xeon-55" id="filter-intel-xeon-55">
+                    <label class="mobile-filter__label" for="filter-intel-xeon-55">Intel Xeon 55XX/56XX (11)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="intel-xeon-e3" id="filter-intel-xeon-e3">
+                    <label class="mobile-filter__label" for="filter-intel-xeon-e3">Intel Xeon E3-12XX (2)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="intel-xeon-e5-v3" id="filter-intel-xeon-e5-v3">
+                    <label class="mobile-filter__label" for="filter-intel-xeon-e5-v3">Intel Xeon E5-26XXV3/V4 (4)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="intel-xeon-e5-26" id="filter-intel-xeon-e5-26">
+                    <label class="mobile-filter__label" for="filter-intel-xeon-e5-26">Intel Xeon E5-26XX/E5-26XXV2 (4)</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="mobile-filter__filtering mobile-filter__filtering--memory">
+              <button class="mobile-filter__button js-filter-accordion-toggle" type="button">
+                <span class="mobile-filter__button-wrap">
+                  <span class="mobile-filter__selected-mark"></span>
+                  <span class="mobile-filter__button-title">Тип памяти</span>
+                </span>
+                <span class="mobile-filter__button-icon"></span>
+              </button>
+              <div class="mobile-filter__wrap">
+                <ul class="mobile-filter__checkbox-list">
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="ddr2" id="filter-ddr2">
+                    <label class="mobile-filter__label" for="filter-ddr2">DDR2 (3)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="ddr3" id="filter-ddr3">
+                    <label class="mobile-filter__label" for="filter-ddr3">DDR3 (18)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="ddr4" id="filter-ddr4">
+                    <label class="mobile-filter__label" for="filter-ddr4">DDR4 (4)</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="mobile-filter__filtering mobile-filter__filtering--hard-drive">
+              <button class="mobile-filter__button js-filter-accordion-toggle" type="button">
+                <span class="mobile-filter__button-wrap">
+                  <span class="mobile-filter__selected-mark"></span>
+                  <span class="mobile-filter__button-title">Жесткие диски</span>
+                </span>
+                <span class="mobile-filter__button-icon"></span>
+              </button>
+              <div class="mobile-filter__wrap">
+                <ul class="mobile-filter__checkbox-list">
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="hard-drive-2.5" id="filter-hard-drive-2.5">
+                    <label class="mobile-filter__label" for="filter-hard-drive-2.5">2.5” (12)</label>
+                  </li>
+                  <li class="mobile-filter__item">
+                    <input class="visually-hidden mobile-filter__input" type="checkbox" name="hard-drive-3.5" id="filter-hard-drive-3.5">
+                    <label class="mobile-filter__label" for="filter-hard-drive-3.5">3.5” (13)</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="buttons">
+          <button class="buttons__submit-button" type="submit">Применить</button>
+          <button class="buttons__reset-button js-mobile-reset-button" type="reset">Сбросить</button>
+        </div>
+      </form>
+    </section>
+    <section class="catalog">
+      <h2 class="visually-hidden">Каталог серверов</h2>
+    </section>
+  </main>
+  <footer class="page-footer"></footer>
+
+  <!-- Метка выранного фильтра в десктопном варианте фильтра -->
+  <template id="variant">
+
+    <div class="variant">
+      <span class="variant__name"></span>
+      <button class="variant__close-button" aria-label="close item" type="button"><span></span></button>
+    </div>
+
+  </template>
+  <script src="./js/desktopfilter.js"></script>
+  <script src="./js/mobilefilter.js"></script>
+</body>
+</html>
