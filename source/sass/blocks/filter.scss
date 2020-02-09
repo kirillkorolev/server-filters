@@ -45,11 +45,12 @@
 .filter__button {
   display: flex;
   align-items: center;
-  padding: 14px 14px 14px 10px;
+  padding: 14px 14.38% 14px 10px;
   background-color: $button-grey;
   border: 1px solid $border-grey;
   outline: none;
   cursor: pointer;
+  height: 100%;
 }
 
 .filter__item {
