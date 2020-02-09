@@ -24,6 +24,7 @@
     var selectedBlocks = selectedFiltersBlock.querySelectorAll(
       ".selected__item--active"
     );
+    selectedFiltersBlock.classList.remove("selected--active");
 
     addedVariants.forEach(function(variant) {
       var parent = variant.closest(".selected__item");
